@@ -58,12 +58,14 @@ body {
 .container {
     width: var(--container-width-lg);
     margin: 0 auto;
+  /*  border: 1px solid black;*/
 }
 
 header {
     height: 50vh;
     padding-top: 2rem;
     overflow: hidden;
+    
 }
 
 .header__top {
@@ -94,7 +96,7 @@ header h1 {
     width: 200px;
     height: 210px;
     aspect-ratio: 1/1;
-    border-radius: 2rem;
+    border-radius: 50%;
     background: linear-gradient(45deg,
             var(--color-primary-variant),
             var(--color-primary),
@@ -193,6 +195,76 @@ section>h2 {
     text-align: center;
     height: 100%;
     position: relative;
+}
+
+
+
+
+ 
+.clima__container{
+    display: grid;
+    grid-template-columns: 35% 60%;
+    gap: 5%;
+    padding: 4rem;
+    align-items: center;
+}
+
+.clima__actual{
+    width: 75%;
+    border-radius: 2rem;
+    display: grid;
+    place-items: center;
+    background: var(--color-light-variant);
+    padding: 2rem 1rem;
+    border: 1px solid transparent;
+}
+
+.clima__actual:hover{
+    
+    background: var(--color-bg-variant);
+    border-color: 1px solid var(--color-primary);
+    cursor: default;
+    text-shadow: 0px 0px 2px black, 1px 1px 5px var(--color-primary);
+}
+
+.pronostico{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:
+     1.5rem;
+}
+
+.pronostico__card {
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.pronostico__card:hover {
+    background: var(--color-bg);
+    border-color: var(--color-primary-variant);
+    cursor: default;
+    
+    
+}
+
+.icon__img{
+    width: 150px;
+    height: 150px;
+}
+.temperatura__container h1{
+    text-align: center;
+    font-weight: 800;
+}
+
+.datos__container h5{
+    text-align: center;
+    font-weight: 800;
+    color: var(--color-primary-variant);
+
 }
 /*
 verdes
