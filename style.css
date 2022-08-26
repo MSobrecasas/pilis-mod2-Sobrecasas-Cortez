@@ -29,9 +29,12 @@
     --container-width-md: 86%;
     --container-width-sm: 90%;
 }
+
+/*         GENERALES          */
 html {
     scroll-behavior: smooth;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -58,14 +61,31 @@ body {
 .container {
     width: var(--container-width-lg);
     margin: 0 auto;
-  /*  border: 1px solid black;*/
+    text-align: center;
+    /*border: 1px solid black;*/
 }
 
+
+section {
+    margin-top: 4rem;
+}
+
+section>h2,
+section>h5 {
+    text-align: center;
+    color: var(--color-light);
+}
+
+section>h2 {
+    color: var(--color-primary);
+}
+
+/*      HEADER       */
 header {
-    height: 50vh;
+    height: 30vh;
     padding-top: 2rem;
     overflow: hidden;
-    
+
 }
 
 .header__top {
@@ -117,6 +137,49 @@ header h1 {
     transform: rotate(0);
 }
 
+/*         HOME          */
+
+
+.home__container {
+    text-align: center;
+    height: 100%;
+    position: relative;
+    background: var(--color-bg-variant);
+    background: linear-gradient(0deg, var(--color-bg) 25%, var(--color-bg-variant) 50%, var(--color-bg) 75%);
+}
+
+.home__titulos__container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 4rem;
+    align-items: center;
+}
+
+.img__home__container {
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.img__home {
+    width: 100%;
+    border-color: 1px solid var(--color-primary);
+
+}
+
+.img__home__container:hover .img__home {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    transition: all .5s ease-in-out;
+}
+
+
+
+.titulos__container h1 {
+    font-size: 4rem;
+    color: var(--color-primary-variant);
+}
+
 .socials {
     display: flex;
     flex-direction: column;
@@ -144,6 +207,7 @@ header h1 {
     font-size: 1.2rem;
 }
 
+/*         NAV           */
 nav {
     background: rgba(0, 0, 0, 0.3);
     width: max-content;
@@ -173,68 +237,50 @@ nav a:hover {
     background: rgba(0, 0, 0, 0.3);
 }
 
-nav a.active {
-    background: var(--color-primary);
-    color: var(--color-bg);
+/*    CLIMA    */
+.titulo__pronostico{
+    padding: 2rem;
+    font-size: 3rem;
 }
 
-section {
-    margin-top: 8rem;
-}
-
-section>h2,
-section>h5 {
-    text-align: center;
-    color: var(--color-light);
-}
-
-section>h2 {
-    color: var(--color-primary);
-}
-.home__container{
-    text-align: center;
-    height: 100%;
-    position: relative;
-}
-
-
-
-
- 
-.clima__container{
+.clima__container {
     display: grid;
-    grid-template-columns: 35% 60%;
+    grid-template-columns: 25% 70%;
     gap: 5%;
-    padding: 4rem;
+    padding: 3.5rem;
     align-items: center;
 }
 
-.clima__actual{
-    width: 75%;
+.clima__actual {
+    width: 100%;
     border-radius: 2rem;
     display: grid;
     place-items: center;
     background: var(--color-light-variant);
     padding: 2rem 1rem;
     border: 1px solid transparent;
+    filter: opacity(3.5);
 }
 
-.clima__actual:hover{
-    
+.clima__actual:hover {
     background: var(--color-bg-variant);
     border-color: 1px solid var(--color-primary);
     cursor: default;
-    text-shadow: 0px 0px 2px black, 1px 1px 5px var(--color-primary);
 }
 
-.pronostico{
+.clima__actual:hover h5 {
+
+    color: var(--color-primary);
+}
+
+.pronostico {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap:
-     1.5rem;
+    gap: 1.5rem;
 }
 
 .pronostico__card {
+    width: 100%;
     background: var(--color-bg-variant);
     border: 1px solid transparent;
     border-radius: 1rem;
@@ -247,25 +293,240 @@ section>h2 {
     background: var(--color-bg);
     border-color: var(--color-primary-variant);
     cursor: default;
-    
-    
+
+
+}
+.icon__container{
+    width: 100%;
+}
+.icon__img {
+    width: 100%;
+    height: 100%;
 }
 
-.icon__img{
-    width: 150px;
-    height: 150px;
-}
-.temperatura__container h1{
+.temperatura__container h1 {
     text-align: center;
     font-weight: 800;
 }
 
-.datos__container h5{
+.datos__container h5 {
     text-align: center;
     font-weight: 800;
     color: var(--color-primary-variant);
 
 }
+
+/*    FOOTER    */
+
+
+.footer__container {
+    background: var(--color-primary);
+    height: 65vh;
+    color: var(--color-white);
+}
+
+.colaboradores__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.img__container {
+    width: 100%;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+
+
+.img__colaboradores {
+    width: 100%;
+    overflow: hidden;
+}
+
+.contacto__container {
+    align-items: center;
+    text-align: center;
+}
+
+.iconos__contacto {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.iconos__contacto a {
+    color: var(--color-bg-variant);
+    transition: var(--transition);
+    font-size: 3rem;
+    background: transparent;
+    border-radius: 50%;
+}
+
+
+.iconos__contacto a:hover {
+    color: var(--color-white);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    transition: all .5s ease-in-out;
+}
+
+.creditos__container {
+    text-align: center;
+    padding: 4rem;
+}
+
+/*   DISPOSITIVOS DE TAMAÑO MEDIANO    */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: var(--container-width-md);
+    }
+
+    section {
+        margin-top: 6rem;
+    }
+
+    .titulos__container h1 {
+        font-size: 2.5rem;
+    }
+
+    .titulos__container h2 {
+        font-size: 1rem;
+    }
+
+    .clima__container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: center;
+    }
+    .clima__actual{
+        display: grid;
+        width: 75%;
+        grid-template-columns: 1fr;
+        margin: auto;
+        gap: 2rem;
+    }
+    .pronostico {
+        display: grid;
+        width: 75%;
+        grid-template-columns: 1fr;
+        margin: auto;
+        gap: 2rem;
+    }
+
+    .icon__img {
+        width: 50%;
+        height: 50%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: var(--container-width-sm);
+    }
+
+    section>h2 {
+        margin-top: 2rem;
+    }
+
+    header{
+        height: 70vh;
+    }
+    .header__top {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-top: 2rem;
+        align-items: center;
+    }
+    
+    .header__container {
+        text-align: center;
+        height: 100%;
+        position: relative;
+    
+    }
+    
+    .titulo__container {
+        justify-content: center;
+        margin: auto;
+    }
+
+    .img__logo {
+        margin: auto;
+    }
+
+    .home__titulos__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 4rem;
+        align-items: center;
+    }
+    
+    .img__home__container {
+        padding-top: 2rem;
+        width: 100%;
+        overflow: hidden;
+    
+    }
+
+    .clima__container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: center;
+    }
+    .clima__actual{
+        display: grid;
+        width: 90%;
+        grid-template-columns: 1fr;
+        margin: auto;
+        gap: 2rem;
+    }
+    .pronostico {
+        display: grid;
+        width: 90%;
+        grid-template-columns: 1fr;
+        margin: auto;
+        gap: 2rem;
+    }
+
+    .icon__img {
+        width: 50%;
+        height: 50%;
+    }
+
+    .titulo__pronostico{
+        font-size: 2rem;
+    }
+
+    .iconos__contacto a {
+        color: var(--color-bg-variant);
+        transition: var(--transition);
+        font-size: 2rem;
+        background: transparent;
+        border-radius: 50%;
+    }
+    .colaboradores__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .footer__container {
+        height: 110vh;
+    }
+    .creditos__container {
+        padding: 2rem;
+    }
+    .img__container {
+        padding: 0.5rem;
+    }
+    
+}
+
 /*
 verdes
 60D394
