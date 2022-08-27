@@ -17,7 +17,6 @@ window.addEventListener('load', () => {
       const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&lang=es&units=metric&exclude=${part}&appid=${api}`
       console.log(url);
 
->>>>>>> 10e1fb50a287a836c5a2c4bf09978d50143352a9
 
       fetch(url)
         .then(response => { return response.json() })
@@ -49,12 +48,12 @@ window.addEventListener('load', () => {
 
 
 
-                })
-                .catch(err => {
-                    console.log(err);
-                })
         })
-    }
+        .catch(err => {
+          console.log(err);
+        })
+    })
+  }
 });
 
 
@@ -137,76 +136,11 @@ let cardsPronosticos = (data, containerPronostico) => {
     pronostico.appendChild(datosMax);
 
 
-  let hum1 = data.daily[0].himidity;
-
- 
-  //pronostico dia 2
-  let pron2 = document.createElement("div");
-  pron2.className += "pronostico__card";
-
-  let dia1 = document.createElement("h1");
-  let timestamp1 = data.daily[1].dt;
-  let b = new Date(timestamp1*1000);
-  let dayOfWeek1 = days[b.getDay()]
-  console.log(dayOfWeek1);
-  let texto1 = document.createTextNode(dayOfWeek1);
-  dia1.appendChild(texto1);
-  pron2.appendChild(dia1);
-
-  let icon_div2 = document.createElement("div");
-  icon_div2.className += "icon__container";
-
-  let icon2 = document.createElement("img");
-  icon2.className += "icon__img";
-  let icon_img2 = data.daily[1].weather[0].main;
-  setIcono(icon2, icon_img2);
-  icon_div2.appendChild(icon2);
-  pron2.appendChild(icon_div2);
-
-
-  let min1 = data.daily[1].temp.min;
-  let max1 = data.daily[1].temp.max;
-  let datos1 = document.createElement("h5");
-  let newContent1 = document.createTextNode(`Min: ${min1}°  Max: ${max1}°`);
-  datos1.appendChild(newContent1);
-  pron2.appendChild(datos1);
-
-
-  let hum2 = data.daily[1].himidity;
-
-
-  ///pronostico dia3
-
-  let pron3 = document.createElement("div");
-  pron3.className += "pronostico__card";
-
-  let dia2 = document.createElement("h1");
-  let timestamp2 = data.daily[2].dt;
-  let c = new Date(timestamp2*1000);
-  let dayOfWeek2 = days[c.getDay()]
-  console.log(dayOfWeek2);
-  let texto2 = document.createTextNode(dayOfWeek2);
-  dia2.appendChild(texto2);
-  pron3.appendChild(dia2);
-
-  let icon_div3 = document.createElement("div");
-  icon_div3.className += "icon__container";
-
-  let icon3 = document.createElement("img");
-  icon3.className += "icon__img";
-  let icon_img3 = data.daily[2].weather[0].main;
-  setIcono(icon3, icon_img3);
-  icon_div3.appendChild(icon3);
-  pron3.appendChild(icon_div3);
-
-
-  let min2 = data.daily[2].temp.min;
-  let max2 = data.daily[2].temp.max;
-  let datos2 = document.createElement("h5");
-  let newContent2 = document.createTextNode(`Min: ${min1}°  Max: ${max1}°`);
-  datos2.appendChild(newContent2);
-  pron3.appendChild(datos2);
-
+    let hum1 = data.daily[i].humidity;
+    let humedad = document.createElement("h5");
+    let newContentH = document.createTextNode(`Humedad: ${hum1}%`);
+    humedad.appendChild(newContentH);
+    pronostico.appendChild(humedad);
 
     containerPronostico.appendChild(pronostico);
   }

@@ -362,6 +362,10 @@ nav a:hover {
     background: #AAF683;
     padding: 100px 0;
 }
+.container__form{
+    padding: 2rem;
+    height: 80vh;
+}
 
 .contact-form {
     float: right;
@@ -473,6 +477,8 @@ nav a:hover {
     text-align: center;
     padding: 4rem;
 }
+
+
 
 /*   DISPOSITIVOS DE TAMAÑO MEDIANO    */
 @media screen and (max-width: 1024px) {
