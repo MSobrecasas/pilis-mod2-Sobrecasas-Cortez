@@ -1,6 +1,7 @@
 window.addEventListener('load', () => {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     let val_temp = document.getElementById('valor_temp');
     let desc_temp = document.getElementById('desc_temp');
     let icon = document.getElementById('icon');
@@ -8,12 +9,15 @@ window.addEventListener('load', () => {
     let humedad = document.getElementById('humedad');
     let container_pronostico = document.getElementById('pronostico');
 =======
+=======
+>>>>>>> 66f3dea6ba5965e530b3ac1602010c936610a700
   let valorTemperatura = document.getElementById('valor_temp');
   let descripcionTemperatura = document.getElementById('desc_temp');
   let icon = document.getElementById('icon');
   let velcidadViento = document.getElementById('vel_viento');
   let humedad = document.getElementById('humedad');
   let containerPronostico = document.getElementById('pronostico');
+<<<<<<< HEAD
 >>>>>>> 03cd2354088494e2598bc4a298ddcb130e2c6556
 
 
@@ -40,6 +44,20 @@ window.addEventListener('load', () => {
                     let des = data.current.weather[0].description;
                     desc_temp.textContent = des.toUpperCase();
 =======
+=======
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+
+      let lon = position.coords.longitude;
+      let lat = position.coords.latitude;
+      let api = "742cc42f63362b2cd908a39ab24ed2f5";
+      let part = "minutely,hourly";
+      const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&lang=es&units=metric&exclude=${part}&appid=${api}`
+      console.log(url);
+
+
+>>>>>>> 66f3dea6ba5965e530b3ac1602010c936610a700
       fetch(url)
         .then(response => { return response.json() })
         .then(data => {
@@ -54,12 +72,16 @@ window.addEventListener('load', () => {
           console.log(data.current.wind_speed);
           let vel = data.current.wind_speed;
           velcidadViento.textContent = `Viento: a ${vel} Kh/h`
+<<<<<<< HEAD
 >>>>>>> 03cd2354088494e2598bc4a298ddcb130e2c6556
+=======
+>>>>>>> 66f3dea6ba5965e530b3ac1602010c936610a700
 
-                    console.log(data.current.wind_speed);
-                    let vel = data.current.wind_speed;
-                    vel_viento.textContent = `Viento: a ${vel} Kh/h`
+          console.log(data.current.humidity);
+          let hum = data.current.humidity;
+          humedad.textContent = `Humedad: ${hum} %`
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                     console.log(data.current.humidity);
                     let hum = data.current.humidity;
@@ -73,9 +95,16 @@ window.addEventListener('load', () => {
 
           setIcono(icon, iconImg);
 >>>>>>> 03cd2354088494e2598bc4a298ddcb130e2c6556
+=======
+          console.log(data.current.weather[0].main)
+          let iconImg = data.current.weather[0].main;
 
-                    setIcono(icon, icon_img);
+          setIcono(icon, iconImg);
 
+>>>>>>> 66f3dea6ba5965e530b3ac1602010c936610a700
+
+
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -83,20 +112,24 @@ window.addEventListener('load', () => {
 >>>>>>> 03cd2354088494e2598bc4a298ddcb130e2c6556
 
                     cards_pronosticos(data, container_pronostico);
+=======
+          cardsPronosticos(data, containerPronostico);
+>>>>>>> 66f3dea6ba5965e530b3ac1602010c936610a700
 
 
 
-                })
-                .catch(err => {
-                    console.log(err);
-                })
         })
-    }
+        .catch(err => {
+          console.log(err);
+        })
+    })
+  }
 });
 
 
 let setIcono = (icon, iconImg) => {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     switch (icon_img) {
         case 'Thunderstorm':
@@ -143,6 +176,8 @@ let cards_pronosticos = (data, container_pronostico) => {
     let dia = document.createElement("h1");
     let timestamp = data.daily[0].dt;
 =======
+=======
+>>>>>>> 66f3dea6ba5965e530b3ac1602010c936610a700
   switch (iconImg) {
     case 'Thunderstorm':
       icon.src = 'assets/icons/thunder.svg'
@@ -190,12 +225,16 @@ let cardsPronosticos = (data, containerPronostico) => {
 
     let dia = document.createElement("h1");
     let timestamp = data.daily[i].dt;
+<<<<<<< HEAD
 >>>>>>> 03cd2354088494e2598bc4a298ddcb130e2c6556
+=======
+>>>>>>> 66f3dea6ba5965e530b3ac1602010c936610a700
     let a = new Date(timestamp * 1000);
     let dayOfWeek = days[a.getDay()]
     console.log(dayOfWeek);
     let texto = document.createTextNode(dayOfWeek);
     dia.appendChild(texto);
+<<<<<<< HEAD
 <<<<<<< HEAD
     pron1.appendChild(dia);
 
@@ -295,6 +334,43 @@ let cardsPronosticos = (data, containerPronostico) => {
     container_pronostico.appendChild(pron1);
     container_pronostico.appendChild(pron2);
     container_pronostico.appendChild(pron3);
+=======
+    pronostico.appendChild(dia);
+
+    let iconDiv = document.createElement("div");
+    iconDiv.className += "icon__container";
+
+    let icon = document.createElement("img");
+    icon.className += "icon__img";
+    let iconImg = data.daily[i].weather[0].main;
+    setIcono(icon, iconImg);
+    iconDiv.appendChild(icon);
+    pronostico.appendChild(iconDiv);
+
+
+    let min = data.daily[i].temp.min;
+    let max = data.daily[i].temp.max;
+    let datosMin = document.createElement("h5");
+    let newContent = document.createTextNode(`Min: ${min}°`);
+    datosMin.appendChild(newContent);
+    pronostico.appendChild(datosMin);
+    let datosMax = document.createElement("h5");
+    let newContent1 = document.createTextNode(`Max: ${max}°`);
+    datosMax.appendChild(newContent1);
+    pronostico.appendChild(datosMax);
+
+
+    let hum1 = data.daily[i].humidity;
+    let humedad = document.createElement("h5");
+    let newContentH = document.createTextNode(`Humedad: ${hum1}%`);
+    humedad.appendChild(newContentH);
+    pronostico.appendChild(humedad);
+
+    containerPronostico.appendChild(pronostico);
+  }
+
+
+>>>>>>> 66f3dea6ba5965e530b3ac1602010c936610a700
 }
 
 /*formulario */
@@ -345,6 +421,7 @@ function onclick(event) {
 
 }
 let boton = document.getElementById("enviar");
+<<<<<<< HEAD
 boton.addEventListener("click", onclick);
 =======
     pronostico.appendChild(dia);
@@ -384,3 +461,6 @@ boton.addEventListener("click", onclick);
 
 }
 >>>>>>> 03cd2354088494e2598bc4a298ddcb130e2c6556
+=======
+boton.addEventListener("click", onclick);
+>>>>>>> 66f3dea6ba5965e530b3ac1602010c936610a700
