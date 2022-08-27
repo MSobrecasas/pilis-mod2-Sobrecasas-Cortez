@@ -255,6 +255,6 @@ function onclick(event) {
         window.location.href = "https://google.com";
     }
 
-
-    let boton = document.getElementById("enviar");
-    boton.addEventListener("click", onclick);
+}
+let boton = document.getElementById("enviar");
+boton.addEventListener("click", onclick);
