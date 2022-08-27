@@ -7,11 +7,10 @@ window.addEventListener('load', () => {
     let humedad = document.getElementById('humedad');
     let containerPronostico = document.getElementById('pronostico');
 
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
+    
 
-            let lon = position.coords.longitude;
-            let lat = position.coords.latitude;
+            let lon = -65.33129512353948;
+            let lat = -24.18338609618345;
             let api = "742cc42f63362b2cd908a39ab24ed2f5";
             let part = "minutely,hourly";
             const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&lang=es&units=metric&exclude=${part}&appid=${api}`
@@ -52,8 +51,7 @@ window.addEventListener('load', () => {
                 .catch(err => {
                     console.log(err);
                 })
-        })
-    }
+     
 });
 
 
