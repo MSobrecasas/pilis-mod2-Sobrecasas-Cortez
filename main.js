@@ -196,4 +196,5 @@ function onclick(event) {
 
 }
 let boton = document.getElementById("enviar");
+<<<<<<< HEAD
 boton.addEventListener("click", onclick);
