@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
 /* font-family: 'Berkshire Swash', cursive; */
+
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
 /* font-family: 'Berkshire Swash', cursive; */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* font-family: 'Roboto Slab', serif; */
 
 * {
@@ -22,16 +27,16 @@
     --color-white: #ffffff;
     --color-light: #FFBA81;
     --color-light-variant: #FFD97D;
-
     --transition: all 400ms ease;
-
     --container-width-lg: 75%;
     --container-width-md: 86%;
     --container-width-sm: 90%;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -52,20 +57,18 @@ body {
     color: var(--color-primary);
     line-height: 1.7;
     letter-spacing: 0.15em;
-
 }
 
 .container {
     width: var(--container-width-lg);
     margin: 0 auto;
-  /*  border: 1px solid black;*/
+    /*  border: 1px solid black;*/
 }
 
 header {
     height: 50vh;
     padding-top: 2rem;
     overflow: hidden;
-    
 }
 
 .header__top {
@@ -78,7 +81,6 @@ header {
     text-align: center;
     height: 100%;
     position: relative;
-
 }
 
 .titulo__container {
@@ -97,13 +99,9 @@ header h1 {
     height: 210px;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background: linear-gradient(45deg,
-            var(--color-primary-variant),
-            var(--color-primary),
-            var(--color-primary-variant));
+    background: linear-gradient(45deg, var(--color-primary-variant), var(--color-primary), var(--color-primary-variant));
     display: grid;
     place-items: center;
-
 }
 
 .img__logo-image {
@@ -191,17 +189,14 @@ section>h5 {
 section>h2 {
     color: var(--color-primary);
 }
-.home__container{
+
+.home__container {
     text-align: center;
     height: 100%;
     position: relative;
 }
 
-
-
-
- 
-.clima__container{
+.clima__container {
     display: grid;
     grid-template-columns: 35% 60%;
     gap: 5%;
@@ -209,7 +204,7 @@ section>h2 {
     align-items: center;
 }
 
-.clima__actual{
+.clima__actual {
     width: 75%;
     border-radius: 2rem;
     display: grid;
@@ -219,19 +214,17 @@ section>h2 {
     border: 1px solid transparent;
 }
 
-.clima__actual:hover{
-    
+.clima__actual:hover {
     background: var(--color-bg-variant);
     border-color: 1px solid var(--color-primary);
     cursor: default;
     text-shadow: 0px 0px 2px black, 1px 1px 5px var(--color-primary);
 }
 
-.pronostico{
+.pronostico {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap:
-     1.5rem;
+    gap: 1.5rem;
 }
 
 .pronostico__card {
@@ -247,25 +240,78 @@ section>h2 {
     background: var(--color-bg);
     border-color: var(--color-primary-variant);
     cursor: default;
-    
-    
 }
 
-.icon__img{
+.icon__img {
     width: 150px;
     height: 150px;
 }
-.temperatura__container h1{
+
+.temperatura__container h1 {
     text-align: center;
     font-weight: 800;
 }
 
-.datos__container h5{
+.datos__container h5 {
     text-align: center;
     font-weight: 800;
     color: var(--color-primary-variant);
-
 }
+
+#formulario {
+    background: #AAF683;
+    padding: 100px 0;
+}
+
+.contact-form {
+    float: right;
+    width: 45%;
+    padding: 20px;
+}
+
+.contact-title {
+    float: left;
+    width: 55%;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.375rem 0.7rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    border: none;
+}
+
+.btn {
+    font-size: 15px;
+    padding: 14px 23px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.btn-light {
+    background: #FF9B85;
+    border: 1px solid #D8574D;
+    color: #AAF683;
+    width: 100%;
+}
+
+.btn-light:hover {
+    background: #D8574D;
+    border: 1px solid #60D394;
+    color: #ffffff;
+}
+
+
 /*
 verdes
 60D394

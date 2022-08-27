@@ -54,9 +54,43 @@
         <section id="nosotros" class="container">
             nosotros
         </section>
-        <section id="registro" class="container">
-            registro
+
+        <section id="registro">
+            <div class="container">
+                <div class="contact-form">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Celular</label>
+                            <input class="form-control" type="number">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Email</label>
+                            <input class="form-control" type="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Mensaje</label>
+                            <textarea class="form-control" name="message" id="message" cols="30" rows="10"></textarea>
+                        </div>
+                        <button class="btn btn-light" onclick="getValueInput">Enviar</button>
+                    </form>
+                </div>
+                <div class="contact-title">
+                    <h2>REGISTRATE !!!</h2>
+                    <br>
+                    <h2>DEJANOS TUS DATOS PARA QUE PUEDAMOS CONTACTARTE Y ASI FORMAR PARTE DE LA FERIA DE LAS PLANTAS</h2>
+                </div>
+            </div>
         </section>
+
+
+
+
+
         <section id="clima" class="container">
             <h1>Pronostico del Tiempo</h1>
             <div class="clima__container">
@@ -78,7 +112,7 @@
                     </div>
                 </div>
 
-                <div  id="pronostico" class="pronostico">
+                <div id="pronostico" class="pronostico">
                 </div>
 
             </div>
