@@ -409,7 +409,9 @@ nav a:hover {
     border: 1px solid #60D394;
     color: #ffffff;
 }
-
+ #evento{
+    height: 45vh;
+ }
 
 /*    FOOTER    */
 
