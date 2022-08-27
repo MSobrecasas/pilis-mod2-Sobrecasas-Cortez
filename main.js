@@ -151,7 +151,7 @@ let cardsPronosticos = (data, containerPronostico) => {
 /*formulario */
 
 
-function onclick(event) {
+function onClick(event) {
     event.preventDefault();
     this.style.backgroundColor = "black";
     console.log("click ...");
@@ -177,8 +177,9 @@ function onclick(event) {
         .then((json) => {
             console.log(json);
             Swal.fire(
-                'Mensaje enviado',
-                'sucess'
+                ' Su registro se ha realizado con exito ... ',
+                ' Lo contactaremos a la brevedad '
+
             );
             cleanForm();
 
@@ -186,7 +187,7 @@ function onclick(event) {
         .catch((err) => console.log(err));
 
     function cleanForm() {
-        let formulario = document.getElementById('formulario');
+        let formulario = document.getElementById('form1');
         formulario.reset();
     }
 
@@ -196,4 +197,4 @@ function onclick(event) {
 
 }
 let boton = document.getElementById("enviar");
-boton.addEventListener("click", onclick);
+boton.addEventListener("click", onClick);
