@@ -153,7 +153,7 @@ let cardsPronosticos = (data, containerPronostico) => {
 
 function onClick(event) {
     event.preventDefault();
-    this.style.backgroundColor = "black";
+    this.style.backgroundColor = "salmon";
     console.log("click ...");
     console.log(event);
 
